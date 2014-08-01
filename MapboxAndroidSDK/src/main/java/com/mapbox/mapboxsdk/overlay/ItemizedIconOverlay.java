@@ -135,6 +135,16 @@ public class ItemizedIconOverlay extends ItemizedOverlay {
         populate();
         return result;
     }
+    
+    /**
+     * Returns whether this Overlay contains the specified marker or not.
+     * 
+     * @param marker the marker to check for
+     * @return whether this Overlay contains the specified marker or not
+     */
+    public boolean containsItem(final Marker item) {
+        return mItemList.contains(item);
+    }
 
     public Marker removeItem(final int position) {
         final Marker item = mItemList.remove(position);
