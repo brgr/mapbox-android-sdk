@@ -387,6 +387,12 @@ public class MapView extends ViewGroup
      * Remove a marker from the map's display.
      */
     public void removeMarker(final Marker marker) {
+        if (marker == null)
+            throw new IllegalArgumentException("marker is null");
+        if (defaultMarkerOverlay == null || !defaultMarkerList.contains(marker) ||
+            !defaultMarkerOverlay.containsItem(marker))
+            throw new IllegalArgumentException("there exists no such marker on the map's display");
+        
         defaultMarkerList.remove(marker);
         defaultMarkerOverlay.removeItem(marker);
         this.invalidate();
