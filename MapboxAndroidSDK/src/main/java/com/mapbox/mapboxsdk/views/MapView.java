@@ -385,6 +385,7 @@ public class MapView extends ViewGroup
 
     /**
      * Remove a marker from the map's display.
+     * If the marker is null or there is no marker as the given one, an IllegalArgumentException will be thrown.
      */
     public void removeMarker(final Marker marker) {
         if (marker == null)
